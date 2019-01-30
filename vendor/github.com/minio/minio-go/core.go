@@ -35,7 +35,7 @@ type Core struct {
 // and being able to use them to write your own wrappers.
 func NewCore(endpoint string, accessKeyID, secretAccessKey string, secure bool) (*Core, error) {
 	var s3Client Core
-	client, err := NewV4(endpoint, accessKeyID, secretAccessKey, secure)
+	client, err := NewV2(endpoint, accessKeyID, secretAccessKey, secure)
 	if err != nil {
 		return nil, err
 	}
