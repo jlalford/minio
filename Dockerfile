@@ -5,12 +5,12 @@ LABEL maintainer="Minio Inc <dev@minio.io>"
 ENV GOPATH /go
 ENV CGO_ENABLED 0
 
-WORKDIR /go/src/github.com/minio/
+WORKDIR /go/src/github.com/jlalford/
 
 RUN  \
      apk add --no-cache git && \
-     go get -v -d github.com/minio/minio && \
-     cd /go/src/github.com/minio/minio && \
+     go get -v -d github.com/jlalford/minio && \
+     cd /go/src/github.com/jlalford/minio && \
      go install -v -ldflags "$(go run buildscripts/gen-ldflags.go)"
 
 FROM alpine:3.7
